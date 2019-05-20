@@ -7,6 +7,7 @@
  * @package pustDepartment
  */
 
+require_once get_theme_file_path('/inc/tgm.php');
 if ( ! function_exists( 'pustdepartment_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
