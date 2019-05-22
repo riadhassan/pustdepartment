@@ -1,0 +1,286 @@
+/* #Media Queries Responsive
+================================================== */
+
+/* Desktop large
+------------------------- */
+@media (min-width: 1200px) {
+	
+}
+
+/* Desktop
+------------------------- */
+@media (min-width: 993px) and (max-width: 1199px) {
+	/* Home */
+	#header #header-top .logo{padding: 4px 10px;}
+	#header #header-top .top-nav h1{margin-left: 14%;font-size: 30px;}
+	.top-nav .top-content{margin-left: 50px;}
+	#academics-holder ul#schools-ul{width: 28%;}
+	#academics-holder #dept-list-container ul li{min-height: 140px;}
+	/* Home End*/
+	#header #nav-bar .main-nav > ul > li > a{ 
+		 font-size: 15px; 
+		 line-height: 20px; 
+
+}
+.top-nav h1{
+	font-size: 28px;
+}
+
+	#department #department-container .department-section{width: 65%;}
+	#inner-page #banner-holder #dept-title{font-size: 32px;}
+
+	/* Academics */
+	#department #department-container .department-faculty ul.faculty-member li{margin-right: 85px;}
+	#department #department-container .department-section .department-grid-ul li{width: 100% !important; position: relative !important; left: 0 !important; top: inherit !important; margin-bottom: 15px;}
+	.schools-accordion .department-ul > li{padding-right: 15px;}
+
+
+	/* Admission */
+	#department #department-container  table#application-info-table{width: 100%;}
+	/* End Admission */
+	.thumbnail{
+		height: 200px !important;
+	}
+}
+
+/* Tablet to desktop
+------------------------- */
+@media (min-width: 768px) and (max-width: 992px) {
+    	.banner_fluid {
+    margin-top: 0px;
+}
+	#header{ position: relative;}
+	a.mobilemenu{display: block;}
+	.mobile-menu-logo{display: table;}
+	#header #nav-bar, #header #header-top .top-nav h1, .logo, #full-footer #prefooter, #inner-page #banner-holder, #common-banner, #department #department-container .department-side-nav{display: none;}
+	a.more{width: 50%; /*padding: 15px 20px 15px;*/ margin: 0px auto;}
+	#department #department-container .department-section{padding: 0;}
+	.mobile-view{display: block !important;}
+	.mobile-breadcrumb{display: none !important;}
+	.large-view{display: none;}
+	#department #department-container .department-section .department-overview h2{font-size: 20px;}
+	#department #department-container .department-section .banner-image{margin-bottom: 10px;}
+	#header.fixed{display: none;}
+	.table-container-div{overflow-x: scroll;}
+	.flexslider .slides .flex-caption, .flex-control-nav{display: none !important;}
+	#header #header-top .top-nav .forms-and-downloads-a{display: none;}
+	
+	/*Home*/
+	#banner-holder .sl-slider .sl-slide .sl-slide-inner > div{left: 0; right: 0; margin: 0px auto; text-align: center;}
+	#wt-text-holder #bg-tab{display: none;}
+	#academics-holder #dept-list-container h3{font-size: 16px;}
+	#home-tab-content{margin-top: 12px; width: 100%;}
+	#academics-holder ul#schools-ul, #academics-holder #dept-list-container{width: 100%;}
+	#academics-holder ul#schools-ul{min-height: inherit; margin-bottom: 40px;}
+	#academics-holder #dept-list-container ul li{width: 49.5%; min-height: 100px;}
+	#academics-holder #dept-list-container ul li span{padding-top: 35px;}
+	#academics-holder #dept-list-container ul li a{min-height: 100px;}
+	
+	#full-footer #footer ul.links{display: none;}
+	#full-footer #footer p{text-align: center;}
+	.sl-slider-wrapper, .large-screen-slider, .bx-wrapper{display: none;}
+	.home-mobile-slider{display: block;}
+	#banner-holder{min-height: inherit; background-color: transparent;}
+	
+	#academics-holder ul#schools-ul li.active::before{display: none;}
+	#academics-holder #dept-list-container{min-height: inherit;}
+	.flex-direction-nav a{display: none;}
+	/*Home End*/
+
+	/* About PUST */
+	#department #department-container .department-section{width: 60%;}
+	.news-events-ul li{display: table; margin: 0px auto 20px; text-align: justify;}
+	.news-events-ul li .date{display: block; margin: 0px auto;}
+	.news-and-events-images-ul li{width: 42%;}
+	#inner-page #banner-holder #dept-title{font-size: 28px;}
+	/* About PUST End */
+
+	/*Academics*/
+	#department #department-container .department-section .department-grid-ul li{width: 100% !important; position: relative !important; left: 0 !important; top: inherit !important; margin-bottom: 15px;}
+	#department #department-container .department-section > .department-overview .message .content .img{float: none;}
+	#department #department-container .curriculam-accordion table.curriculum-table tr td a{height: inherit;}
+	.accordion li div.scroll{padding: 0;background: transparent;overflow-x: scroll;}
+	#department #department-container .department-faculty ul.faculty-member li{width: 45%;}
+	.og-details ul.contact-info-ul li{width: 100% !important;}
+	.faculty-detail .thumb{float: none; margin-top: 0; width: 200px;}
+	.og-expander h3{font-size: 20px;}
+	.og-details h3.contact-info-h3{font-size: 16px;}
+	.og-details h5{line-height: 20px;}
+	.schools-accordion .department-ul > li{width: 100%;}
+	/*Academics End*/
+
+   .thumbnail{
+   width: 40%;
+   height: 250px !important;
+   margin:5px;
+}
+
+
+	/* Organization Detail */
+	#department #department-container .department-section .department-overview h2.photo-of-the-week-title{margin-top: 0px;}
+
+}
+
+/* All Mobile Sizes (devices and browser)
+------------------------- */
+@media only screen and (max-width: 767px) {
+    	.banner_fluid {
+    margin-top: 0px;
+}
+	#header{ position: relative;}
+	a.mobilemenu{display: block;}
+	.mobile-menu-logo{display: table;}
+	#header #nav-bar, #header #header-top .top-nav h1, .logo, #full-footer #prefooter, #inner-page #banner-holder, #common-banner, #department #department-container .department-side-nav{display: none;}
+	a.more{width: 50%; /*padding: 15px 20px 15px;*/ margin: 0px auto;}
+	#department #department-container .department-section{padding: 0;}
+	.mobile-view{display: block !important;}
+	.mobile-breadcrumb{display: none !important;}
+	.large-view{display: none;}
+	#department #department-container .department-section .department-overview h2{font-size: 20px;}
+	#department #department-container .department-section .banner-image{margin-bottom: 10px;}
+	#header.fixed{display: none;}
+	.table-container-div{overflow-x: scroll;}
+	.flexslider .slides .flex-caption, .flex-control-nav{display: none !important;}
+	#header #header-top .top-nav .forms-and-downloads-a{display: none;}
+	
+	/*Home*/
+	#banner-holder .sl-slider .sl-slide .sl-slide-inner > div{left: 0; right: 0; margin: 0px auto; text-align: center;}
+	#wt-text-holder #bg-tab{display: none;}
+	#academics-holder #dept-list-container h3{font-size: 16px;}
+	#home-tab-content{margin-top: 12px; width: 100%;}
+	#academics-holder ul#schools-ul, #academics-holder #dept-list-container{width: 100%;}
+	#academics-holder ul#schools-ul{min-height: inherit; margin-bottom: 40px;}
+	#academics-holder #dept-list-container ul li{width: 49.5%; min-height: 100px;}
+	#academics-holder #dept-list-container ul li span{padding-top: 35px;}
+	#academics-holder #dept-list-container ul li a{min-height: 100px;}
+
+	#full-footer #footer ul.links{display: none;}
+	#full-footer #footer p{text-align: center;}
+	.sl-slider-wrapper, .large-screen-slider, .bx-wrapper{display: none;}
+	.home-mobile-slider{display: block;}
+	#banner-holder{min-height: inherit; background-color: transparent;}
+	#news-events-holder ul.news > li > div > .date{display: table; margin: 0px auto; width: initial;}
+	#news-events-holder ul.news > li > div > .desc{display: table; margin: 10px auto 0px; text-align: center;}
+	#news-events-holder ul.news > li > div > .desc > a{float: none;}
+	#news-events-holder ul.news > li > div > .desc > .img{float: none; margin: 15px auto;}
+	#news-events-holder ul.news > li > div > .date > div > span{display: inline-block; font-size: inherit;}
+	#news-events-holder ul.news > li > div > .date > div{font-size: 18px;}
+	#academics-holder ul#schools-ul li.active::before{display: none;}
+	#academics-holder #dept-list-container{min-height: inherit;}
+
+
+	/* About PUST */
+	#department #department-container .department-section, .write ul li ul li, .write ul li textarea{width: 100%;}
+	.news-events-ul li{display: table; margin: 0px auto 20px; text-align: center;}
+	.news-events-ul li .date{display: block; margin: 0px auto;}
+	#department #department-container .department-section > .department-overview{padding: 0;}
+	
+	#department #department-container .department-faculty h2{font-size: 20px;}
+	/* About PUST End */
+
+	/*Academics*/
+	#department #department-container .department-section .department-grid-ul li{width: 100% !important; position: relative !important; left: 0 !important; top: inherit !important; margin-bottom: 15px;}
+	#department #department-container .department-section > .department-overview .message .content .img{float: none; width: 40%;}
+	#department #department-container .department-section > .department-overview .message .content h4{font-size: 16px;}
+	#department #department-container .department-section > .department-overview > h2{margin-bottom: 10px;}
+	#department #department-container .curriculam-accordion table.curriculum-table tr td a{height: inherit; padding: 0;}
+	.accordion li div.scroll{padding: 0;background: transparent;overflow-x: scroll;}
+	.og-grid li{width: 45% !important;}
+	#department #department-container .department-faculty ul.faculty-member li h4{width: inherit;}
+	.og-details ul.contact-info-ul li{width: 100% !important;}
+	.faculty-detail .thumb{float: none; margin-top: 0; width: 200px;}
+	.accordion li, .accordion li ul li{font-size: 13px;}
+	#department #department-container table.curriculum-table tr td, #department #department-container table.curriculum-table tr th{padding: 5px; font-size: 13px;}
+	.accordion li div{padding: 5px 0 5px;}
+	.og-expander h3{font-size: 20px;}
+	.og-details h3.contact-info-h3{font-size: 16px;}
+	.og-details h5{line-height: 20px;}
+	#department #department-container .curriculam-accordion table.curriculum-table tr td a{pointer-events: none;}
+	.schools-accordion .department-ul > li{padding-right: 15px;}
+	a.more{margin-top: 10px;}
+	/*Academics End*/
+
+	
+	#department #department-container .department-section > .department-overview ul.activities-ul li{margin-right: 5px; margin-bottom: 5px;}
+	#department #department-container .department-section > .department-overview ul.activities-ul li img{max-width: 250px;}
+	#department #department-container .department-section > .department-overview ul.activities-ul li a{pointer-events: none;}
+	.og-grid{margin: 0px;}
+	/* Administrations End */
+
+
+
+	/* Organization Detail */
+	#department #department-container .department-section .department-overview h2.photo-of-the-week-title{margin-top: 0px;}
+	/* Organization Detail End */
+
+	/* Admission */
+	#application-info-table tr td.custom{width: auto;}
+	#department #department-container .form-container input[type="text"], #department #department-container .form-container input[type="password"]{width: 200px;}
+	#department #department-container .form-container label{font-size: 14px;}
+	#department #department-container  table#application-info-table{width: 100%;}
+	/* End Admission */
+
+
+}
+
+
+/* Mobile Landscape & Tablet Portrait
+------------------------- */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    	.banner_fluid {
+    margin-top: 0px;
+}
+	#header{ position: relative;}
+		.vc_msg_title img{
+   text-align: center;
+   width: 50%;
+   margin-left:105px !important;
+}
+
+}
+
+/* Mobile Portrait
+------------------------- */
+@media only screen and (max-width: 479px) {
+	#header{ position: relative;}
+	.banner_fluid {
+    margin-top: 0px;
+}
+	a.more{width: 75%; margin: 30px auto 0px; max-width: none; padding: 15px 20px 15px;}
+	a.more:after{left: inherit; bottom: inherit; top: 17px; right: 20px;}
+	#full-footer #footer-social ul.content > li{margin: 0px 10px;}
+	#full-footer #footer-social ul.content > li.li-mobile-hide{display: none;}
+	#full-footer{padding-top: 20px;}
+	.mobile-menu-logo img{margin: 10px auto; max-width: 30%;}
+
+	/*Home*/
+	#academics-holder ul#schools-ul, #academics-holder #dept-list-container{margin-top: 25px;}
+	#academics-holder #dept-list-container ul li{width: 100%;}
+	#department #department-container .department-section .department-grid-ul li{height: 200px;}
+	#academics-holder #dept-list-container h3{text-align: center;}
+	#academics-holder ul#schools-ul li a#schools-a-nav-4 i{vertical-align: top; padding-top: 22px;}
+	/*Home End*/
+
+	/* About PUST */
+	#department #department-container .department-section > .department-overview > h2{font-size: 18px;}
+
+
+	/*Academics*/
+	#department #department-container .department-section > .department-overview .message .content .img{float: none; width: 70%;}
+	.og-grid li{width: 100% !important;}
+	.og-details p.research-interest-p{display: none;}
+	.schools-accordion .department-ul > li{width: 100%;}
+	/*Academics End*/
+
+
+	/* IML */
+	#department #department-container .department-section > .department-overview > ul.iml-director-ul img{max-width: 170px;}
+	/* IML End */
+
+	/* Gallery End */
+	.vc_msg_title img{
+   text-align: center;
+   width: 75%;
+   margin-left:30px !important;
+}
+}
