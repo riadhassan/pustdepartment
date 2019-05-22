@@ -8,6 +8,7 @@
  */
 
 require_once get_theme_file_path('/inc/tgm.php');
+require_once get_theme_file_path('/inc/metabox/homemeta.php');
 if ( ! function_exists( 'pustdepartment_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -45,8 +46,9 @@ if ( ! function_exists( 'pustdepartment_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'pustdepartment' ),
+			'top-menu' => esc_html__( 'Top Main Menu', 'pustdepartment1' ),
 		) );
+
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -122,10 +124,24 @@ add_action( 'widgets_init', 'pustdepartment_widgets_init' );
  */
 function pustdepartment_scripts() {
 	wp_enqueue_style( 'pustdepartment-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'pustdepartment-style-bootstrap', get_template_directory_uri() .'/asset/css/bootstrap.css', null, '20151215'  );
+	wp_enqueue_style( 'pustdepartment-style-menue', get_template_directory_uri() .'/asset/css/jquery.mmenu.all.css', null, '20151215' );
+	wp_enqueue_style( 'pustdepartment-style-style-1', get_template_directory_uri() .'/asset/css/style.css', null, '20151215' );
+	wp_enqueue_style( 'pustdepartment-style-style-2', get_template_directory_uri() .'/asset/css/style2.css', null, '20151215');
+	wp_enqueue_style( 'pustdepartment-style-style3', get_template_directory_uri() .'/asset/css/style3.css', null, '20151215');
+	wp_enqueue_style( 'pustdepartment-style-style4', get_template_directory_uri() .'/asset/css/style4.css', null, '20151215' );
+	wp_enqueue_style( 'pustdepartment-style-font-wasam', get_template_directory_uri() .'/asset/css/font-awesome.css', null, '20151215');
+	wp_enqueue_style( 'pustdepartment-style-responsive', get_template_directory_uri() .'/asset/css/style-responsive.css', null, '20151215' );
 
-	wp_enqueue_script( 'pustdepartment-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	//wp_enqueue_script( 'pustdepartment-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );
+	wp_enqueue_script( 'pustdepartment-jquery', get_template_directory_uri() . '/asset/code.jquery.com/jquery-1.8.2.min.js', array('jquery'), '20151215', true );
+	wp_enqueue_script( 'pustdepartment-mordanizer', get_template_directory_uri() . '/asset/js/modernizr.min.js', array('jquery'), '20151215', true );
+	wp_enqueue_script( 'pustdepartment-bootstrap', get_template_directory_uri() . '/asset/js/bootstrap.js', array('jquery'), '20151215', true );
+	wp_enqueue_script( 'pustdepartment-mmenu', get_template_directory_uri() . '/asset/js/jquery.mmenu.min.all.js', array('jquery'), '20151215', true );
+	wp_enqueue_script( 'pustdepartment-scriptjs1', get_template_directory_uri() . '/asset/js/script.js', array('jquery'), '20151215', true );
+	wp_enqueue_script( 'pustdepartment-scroll', get_template_directory_uri() . '/asset/js/jquery.easeScroll.js', array('jquery'), '20151215', true );
 
-	wp_enqueue_script( 'pustdepartment-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'pustdepartment-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array('jquery'), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -160,3 +176,62 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+function pustdep_widgets_init() {
+
+	register_sidebar( array(
+		'name'          => 'Left footer',
+		'id'            => 'lfooter',
+		'before_widget' => '<div class="abc">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 style="border-bottom: 2px solid #fff;">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Middle footer',
+		'id'            => 'mfooter',
+		'before_widget' => '<div class="abc">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 style="border-bottom: 2px solid #fff;">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Right Footer Up',
+		'id'            => 'rfooterup',
+		'before_widget' => '<div class="abc">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 style="border-bottom: 2px solid #fff;">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Right Footer middle',
+		'id'            => 'rfootermiddle',
+		'before_widget' => '<div class="abc">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 style="border-bottom: 2px solid #fff;">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => 'Right Footer bottom',
+		'id'            => 'rfooterbottom',
+		'before_widget' => '<div class="abc">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 style="border-bottom: 2px solid #fff;">',
+		'after_title'   => '</h2>',
+	) );
+
+
+	register_sidebar( array(
+		'name'          => 'Total bottom',
+		'id'            => 'tbfooter',
+		'before_widget' => '<div class="abc">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 style="border-bottom: 2px solid #fff;">',
+		'after_title'   => '</h2>',
+	) );
+
+}
+add_action( 'widgets_init', 'pustdep_widgets_init' );
