@@ -75,28 +75,34 @@ get_header();
     </div>
 </div>
 </div>
-<div id="body-sp-na" style="border-top:3px solid #6C0B0B;background-color: #F1F1F1;">
-<div class="container-fluid">
-<div class="row" >
-<div class=" col-md-12" style="padding-right: 0px;padding-left: 0px;">
-<marquee style="height: 40px;" class="gnotice" onmouseover="this.stop()" onmouseout="this.start()" scrollamount="5" ><font style="vertical-align: inherit;">
-<a href=/admission/Evening_Programs target="_blank"><i style="color: #000;" class="fa fa-star" aria-hidden="true"></i>
-                                                                                                                    MCSE Circular July 2019</a>
-<a href=/notices/general target="_blank"><i style="color: #000;" class="fa fa-star" aria-hidden="true"></i>
-                                                                                                         Invitation for Tender (OTM)</a>
-<a href=/notices/general target="_blank"><i style="color: #000;" class="fa fa-star" aria-hidden="true"></i>
-                                                                                                         Trasport Schedule during  Ramadan</a>
-<a href=/notices/general target="_blank"><i style="color: #000;" class="fa fa-star" aria-hidden="true"></i>
-                                                                                                         PUST Contacts App for Android</a>
-<a href=/notices/general target="_blank"><i style="color: #000;" class="fa fa-star" aria-hidden="true"></i>
-                                                                                                         Ramadan Office Time (09:00AM to 03:30PM)</a>
-<a href=/admission/Evening_Programs target="_blank"><i style="color: #000;" class="fa fa-star" aria-hidden="true"></i>
-                                                                                                                    Circular for MBA Admission (Evening &amp; Executive)</a>
-</font></marquee>
-</div>
-</div>
-</div>
-</div>
+	<?php
+	$args_notice = array(
+		'post_type'   => 'notice',
+		'post_status' => 'publish',
+		'posts_per_page' => 6,
+	);
+	$department_notice = new WP_Query( $args_notice );
+	?>
+    <div id="body-sp-na" style="border-top:3px solid #6C0B0B;background-color: #F1F1F1;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class=" col-md-12" style="padding-right: 0px;padding-left: 0px;">
+                    <marquee style="height: 40px;" class="gnotice" onmouseover="this.stop()" onmouseout="this.start()"
+                             scrollamount="5"><font style="vertical-align: inherit;">
+                            <?php
+                            while ( $department_notice->have_posts() ) {
+                                $department_notice->the_post();
+                                ?>
+                            <a href="<?php echo esc_url(get_permalink()); ?>" ><i style="color: #000;" class="fa fa-star" aria-hidden="true"></i>&nbsp; <?php echo get_the_title(); ?> &nbsp; &nbsp; &nbsp;</a>
+	                            <?php
+                            }
+                            wp_reset_query();
+                            ?>
+                        </font></marquee>
+                </div>
+            </div>
+        </div>
+    </div>
     <div id="tab" style="background-color: #F1F1F1;">
         <div class="container">
             <div class="row">
@@ -271,90 +277,127 @@ get_header();
 <!-- End .container -->
 </div>
 <!-- End #academics-holder -->
-<div id="news-events-holder" style="background: #ffffff">
-<div class="container-fluid">
-<div class="row">
-<div class="col-md-5 well" style="margin-left: 30px;">
-<div class="panel panel-default">
-<div class="panel-header well" style="text-align: center;border-bottom: 1px dashed #d7d7d7;"><h1>NOTICE BOARD</h1></div>
-<div class="panel-body" >
-<div class="tab-content">
-<div id="home" class="tab-pane fade in active">
-<h3 style="margin-bottom: 15px;"><span><i class="fa fa-thumb-tack" aria-hidden="true"></i></span> Latest Notice</h3>
-<marquee direction="up" height="250" onmouseover="this.stop()" onmouseout="this.start()" scrollamount="2">
+<?php
+$args_notice = array(
+	'post_type'   => 'notice',
+	'post_status' => 'publish',
+	'posts_per_page' => 6,
+);
+$department_notice = new WP_Query( $args_notice );
+?>
+    <div id="news-events-holder" style="background: #ffffff">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-5 well" style="margin-left: 30px;">
+                    <div class="panel panel-default">
+                        <div class="panel-header well" style="text-align: center;border-bottom: 1px dashed #d7d7d7;">
+                            <h1>NOTICE BOARD</h1></div>
+                        <div class="panel-body">
+                            <div class="tab-content">
+                                <div id="home" class="tab-pane fade in active">
+                                    <h3 style="margin-bottom: 15px;"><span><i class="fa fa-thumb-tack"
+                                                                              aria-hidden="true"></i></span> Latest
+                                        Notice</h3>
+                                    <marquee direction="up" height="250" onmouseover="this.stop()"
+                                             onmouseout="this.start()" scrollamount="2">
+                                            <?php
+                                            while ( $department_notice->have_posts() ) {
+                                                $department_notice->the_post();
+                                                $notice_id = get_the_ID();
+                                                $notice_meta_date = get_post_meta($notice_id, '_dep_date', true);
+                                                $notice_meta_file = get_post_meta( $notice_id, '_dep_file', true );
+                                                $notice_newDate = date("d-m-Y", strtotime($notice_meta_date));
+                                                ?>
 
-<div class="notice_row">
-<h4>Invitation for Tender (OTM)</h4>
-<p><span style="color: #4eace0;"><i class="fa fa-calendar" aria-hidden="true"></i> 11:21am, 11th May, 2019 </span>
-<span style="color: #FC427B;margin-left: 10px;"><i class="fa fa-download" aria-hidden="true"></i> <a href="includes/images/notices/Invitation for Tender OTM.pdf" download="download">Download</a> </span></p>
-</div>
-<div class="notice_row">
-<h4>Trasport Schedule during  Ramadan</h4>
-<p><span style="color: #4eace0;"><i class="fa fa-calendar" aria-hidden="true"></i> 11:41am, 8th May, 2019 </span>
-<span style="color: #FC427B;margin-left: 10px;"><i class="fa fa-download" aria-hidden="true"></i> <a href="includes/images/notices/Transport Schedule.pdf" download="download">Download</a> </span></p>
-</div>
-<div class="notice_row">
-<h4>PUST Contacts App for Android</h4>
-<p><span style="color: #4eace0;"><i class="fa fa-calendar" aria-hidden="true"></i> 9:28pm, 7th May, 2019 </span>
-<span style="color: #FC427B;margin-left: 10px;"><i class="fa fa-download" aria-hidden="true"></i> <a href="includes/images/notices/pust_contacts.apk" download="download">Download</a> </span></p>
-</div>
-<div class="notice_row">
-<h4>Ramadan Office Time (09:00AM to 03:30PM)</h4>
-<p><span style="color: #4eace0;"><i class="fa fa-calendar" aria-hidden="true"></i> 4:24pm, 4th May, 2019 </span>
-<span style="color: #FC427B;margin-left: 10px;"><i class="fa fa-download" aria-hidden="true"></i> <a href="includes/images/notices/Ramadan_Office_Time_Notice.pdf" download="download">Download</a> </span></p>
-</div>
+                                        <div class="notice_row">
+                                            <h4><a href="<?php echo esc_url(get_permalink()); ?>"><?php esc_html(the_title()); ?></a></h4>
+                                            <p><span style="color: #4eace0;"><i class="fa fa-calendar"
+                                                                                aria-hidden="true"></i> <?php echo $notice_newDate; ?> </span>
+                                                <span style="color: #FC427B;margin-left: 10px;"><?php
+	                                                if('0'!=$notice_meta_file){
+		                                                ?>
+                                                        <a href="<?php echo $notice_meta_file; ?>"><i class="fa fa-download" aria-hidden="true"></i> Download</a>
+		                                                <?php
+	                                                }
+	                                                ?>
+                                                </span>
+                                            </p>
+                                        </div>
+	                                            <?php
+                                            }
+                                            wp_reset_query();
+                                            ?>
+                                    </marquee>
+                                    <span class="more">
+<div class="panel-footer" style="float: right;">
 
-</marquee>
-<span class="more">
-<div class="panel-footer"style="float: right;" >
-
-<p class="btn btn-primary"><a href="http://pust.ac.bd/notices/general" >View All <span><i class="fa fa-arrow-right"></i></span></a></p>
+<p class="btn btn-primary"><a href="<?php echo get_bloginfo('url').'/notice' ?>">View All <span><i class="fa fa-arrow-right"></i></span></a></p>
 </div>
 </span>
-</div>
+                                </div>
 
 
-</div>
-</div>
+                            </div>
+                        </div>
 
-</div>
-</div>
+                    </div>
+                </div>
 
+<?php
+$args = array(
+	'post_type'   => 'event',
+	'post_status' => 'publish',
+	'posts_per_page' => 5,
+);
+$department_events = new WP_Query( $args );
+?>
+    <div class="col-md-6" style="background: #ffffff;margin-left: 10px;">
+        <div class="news" style="margin-left: 10px;">
+            <h2>News & Events</h2>
+            <div class="row news_table">
+                <?php
+                while ( $department_events->have_posts() ) {
+	                $department_events->the_post();
+                    $event_id = get_the_ID();
+	                $Event_meta_date = get_post_meta($event_id, '_dep_date', true);
+	                $Event_meta_file = get_post_meta( $event_id, '_dep_file', true );
+	                $newDate = date("d-m-Y", strtotime($Event_meta_date));
+	                ?>
+                    <div class="row" style="margin: 5px;">
+                    <div class="container">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-3"> <?php
+	                if ( has_post_thumbnail() )
+	                        the_post_thumbnail();
+		                ?>
+                        </div>
+                        <div class="col-md-8 news_body">
+                            <h4><a href="<?php echo esc_url(get_permalink()); ?>"><?php esc_html(the_title()); ?></a></h4>
+                            <p><span style="color: #4eace0;font-size:14px;"><i class="fa fa-calendar"
+                                                                               aria-hidden="true"></i> <?php echo $newDate; ?> </span>
+                                <span style="color: #FC427B;margin-left: 1px;">
+                                    <?php
+                                     if('0'!=$Event_meta_file){
+                                    ?>
+                                    <a href="<?php echo $Event_meta_file; ?>"><i class="fa fa-download" aria-hidden="true"></i> Download</a>
+                                         <?php
+                                     }
+                                     ?>
+                                         </span></p>
+                        </div>
+                        </div>
+                        </div>
+		                <?php
+                }
+                wp_reset_query();
+                ?>
 
-<div class="col-md-6" style="background: #ffffff;margin-left: 10px;">
-<div class="news" style="margin-left: 10px;" >
-<h2>News & Events</h2>
-<div class="row news_table">
+            </div>
+            <p style="float: right;" class="btn btn-primary"><a href="<?php echo get_bloginfo('url').'/event' ?>">See All <span><i class="fa fa-arrow-right"></i></span></a>
+            </p>
 
-<div class="row" style="margin: 5px;">
-<div class="container">
-<div class="col-md-1"></div>
-<div class="col-md-3"><img src="includes/images/news/images/money.jpg" alt="ghcgfy" height="150px" width="280px"></div>
-<div class="col-md-8 news_body">
-<h4 ><a href="">আর্থিক ব্যবস্থাপনা বিষয়ক কর্মশালা </a></h4>
-<p><span style="color: #4eace0;font-size:14px;"><i class="fa fa-calendar" aria-hidden="true"></i> 22/03/19</span>
-<span style="color: #FC427B;margin-left: 1px;"><a href="http://pust.ac.bd/includes/images/news/file/money.pdf"><i class="fa fa-download" aria-hidden="true"></i> Download</a> </span></p>
-</div>
-</div>
-</div>
-
-<div class="row" style="margin: 5px;">
-<div class="container">
-<div class="col-md-1"></div>
-<div class="col-md-3"><img src="includes/images/news/images/birthday.jpg" alt="gfyufty" height="150px" width="280px"></div>
-<div class="col-md-8 news_body">
-<h4 ><a href=""> বঙ্গবন্ধুর জন্মদিন ও জাতীয় শিশু দিবস উদযাপন</a></h4>
-<p><span style="color: #4eace0;font-size:14px;"><i class="fa fa-calendar" aria-hidden="true"></i> 17/03/19</span>
-<span style="color: #FC427B;margin-left: 1px;"><a href="http://pust.ac.bd/includes/images/news/file/birthday.pdf"><i class="fa fa-download" aria-hidden="true"></i> Download</a> </span></p>
-</div>
-</div>
-</div>
-
-</div>
-<p style="float: right;" class="btn btn-primary"><a href="" >See All <span><i class="fa fa-arrow-right"></i></span></a></p>
-
-</div>
-</div>
+        </div>
+    </div>
 
 <!-- End .col -->
 </div>

@@ -9,6 +9,8 @@
 
 require_once get_theme_file_path('/inc/tgm.php');
 require_once get_theme_file_path('/inc/metabox/homemeta.php');
+require_once get_theme_file_path('/inc/metabox/notice-ventmeta.php');
+
 if ( ! function_exists( 'pustdepartment_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -43,6 +45,7 @@ if ( ! function_exists( 'pustdepartment_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
+		add_image_size( 'depevent', 280, 150 );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
