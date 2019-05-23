@@ -1,60 +1,29 @@
 <?php
-/**
- * The template for displaying 404 pages (not found)
- *
- * @link https://codex.wordpress.org/Creating_an_Error_404_Page
- *
- * @package pustDepartment
- */
-
 get_header();
 ?>
+<div style="height: 200px">
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+</div>
+<div class="container">
+    <div class="row" style="padding-left: 100px">
+        <div class="col-md-12">
+            <div class="error-template">
+                <h1>
+                    Oops!</h1>
+                <h2>
+                    Not Found</h2>
+                <div class="error-details">
+                    Sorry, This page under construction!
+                </div>
+                <div class="error-actions">
+                    <a href="<?php echo get_bloginfo('url') ?>" class="btn btn-primary btn-lg">Take Me Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div style="height: 100px">
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'pustdepartment' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'pustdepartment' ); ?></p>
-
-					<?php
-					get_search_form();
-
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'pustdepartment' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$pustdepartment_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'pustdepartment' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$pustdepartment_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
+    </div>
 <?php
 get_footer();
