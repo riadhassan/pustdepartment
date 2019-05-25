@@ -8,6 +8,40 @@ if('template-parts/home-page.php' != $pustdep_page_template){
 	return;
 }
 
+function pustdep_home_meta_slider() {
+
+	$prefix = '_pustdep_';
+
+	$cmb = new_cmb2_box( array(
+		'id'           => $prefix . 'home_page_slide',
+		'title'        => __( 'Home page', 'pustdepartment' ),
+		'object_types' => array( 'page' ),
+		'context'      => 'normal',
+		'priority'     => 'default',
+	) );
+
+	$slider_group = $cmb->add_field( array(
+		'name' => __( 'Slider', 'pustdepartment' ),
+		'id' => $prefix . 'slider',
+		'type' => 'group',
+	) );
+
+	$cmb->add_group_field( $slider_group, array(
+		'name' => __( 'Title', 'pustdepartment' ),
+		'id' => $prefix . 'title',
+		'type' => 'text',
+	) );
+
+	$cmb->add_group_field( $slider_group, array(
+		'name' => __( 'Image', 'pustdepartment' ),
+		'id' => $prefix . 'image',
+		'type' => 'file',
+	) );
+
+}
+
+add_action( 'cmb2_init', 'pustdep_home_meta_slider' );
+
 function pustdep_home_meta() {
 
 	$prefix = '_pustdep_';
@@ -59,36 +93,3 @@ function pustdep_home_meta() {
 }
 add_action( 'cmb2_init', 'pustdep_home_meta' );
 
-function pustdep_home_meta_slider() {
-
-	$prefix = '_pustdep_';
-
-	$cmb = new_cmb2_box( array(
-		'id'           => $prefix . 'home_page_slide',
-		'title'        => __( 'Home page', 'pustdepartment' ),
-		'object_types' => array( 'page' ),
-		'context'      => 'normal',
-		'priority'     => 'default',
-	) );
-
-	$slider_group = $cmb->add_field( array(
-		'name' => __( 'Slider', 'pustdepartment' ),
-		'id' => $prefix . 'slider',
-		'type' => 'group',
-	) );
-
-	$cmb->add_group_field( $slider_group, array(
-		'name' => __( 'Title', 'pustdepartment' ),
-		'id' => $prefix . 'title',
-		'type' => 'text',
-	) );
-
-	$cmb->add_group_field( $slider_group, array(
-		'name' => __( 'Image', 'pustdepartment' ),
-		'id' => $prefix . 'image',
-		'type' => 'file',
-	) );
-
-}
-
-add_action( 'cmb2_init', 'pustdep_home_meta_slider' );

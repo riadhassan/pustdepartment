@@ -127,7 +127,6 @@ get_header();
                                 <div class="row">
                                     <div class="col-md-9 ">
                                         <div class="row vc_msg_body" style="padding: 10px;">
-                                            <pre><?php print_r($sliders) ?></pre>
 	                                        <?php echo wpautop( get_post_meta( get_the_ID(), '_pustdep_chairman_message', true )); ?>
                                         </div>
 
