@@ -9,6 +9,7 @@
 
 require_once get_theme_file_path('/inc/tgm.php');
 require_once get_theme_file_path('/inc/metabox/homemeta.php');
+require_once get_theme_file_path('/inc/metabox/downloadsmeta.php');
 require_once get_theme_file_path('/inc/metabox/notice-ventmeta.php');
 
 if ( ! function_exists( 'pustdepartment_setup' ) ) :
