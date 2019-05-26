@@ -7,7 +7,7 @@ get_header();
 	<div id="department " style="background-image: url('<?php if ( has_post_thumbnail() ){the_post_thumbnail_url();} ?>');background-size: cover !important;background-repeat: no-repeat !important;background-attachment: fixed;">
 		<div class="container">
 			<div id="banner-holder" class="transparent-banner">
-				<h2 id="dept-title">Downloads</h2>
+				<h2 id="dept-title">DOWNLOADS</h2>
 				<div class="breadcrumb"></div>
 			</div><!-- End #banner-holder -->
 <div class="content" style="margin-bottom: 20px;">
