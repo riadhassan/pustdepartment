@@ -142,20 +142,29 @@
     <!-- End #footer -->
 </div>
 <!-- End #full-footer -->
+
 <span id="bg-tab"></span>
 </div>
+<?php
+if(is_active_sidebar('mmenu')){
+	dynamic_sidebar('mmenu');
+}
+?>
 <a href="#" id="backToTop"></a>
+<?php wp_footer(); ?>
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!--<script src="asset/js/bootstrap.js"></script>-->
 <!-- End Flex slider
 <script src="{{asset('asset//js/script.js')}}"></script>
 Mobile Menu -->
-<!--<script src="asset/js/jquery.mmenu.min.all.js" type="text/javascript"></script>-->
 <script type="text/javascript">
-    $('nav#menu').mmenu();
+        $('nav#menu').mmenu();
 </script>
-<?php wp_footer(); ?>
+
+
+</script>
+
 <!--<script src="asset/js/script.js"></script>-->
 <!-- Mobile Menu End -->
 <script type="text/javascript">
