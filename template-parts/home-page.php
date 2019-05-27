@@ -196,74 +196,107 @@ get_header();
         </div>
     </div>
 <!-- End .container -->
+	<?php
+	$args_degree = array(
+		'post_type'   => 'degree',
+		'post_status' => 'publish',
+		'posts_per_page' => -1,
+	);
+	$department_degree = new WP_Query( $args_degree );
+	$count =0;
+	?>
 <div id="academics-holder">
 <div class="container ftab" style="margin-top: 10px">
 <div class="row">
 <div class="col col-sm-4" >
 <ul class="nav nav-tabss nav-stacked text-center" role="tablist" style="background-color: #fff;border:1px solid #d7d7d7;">
-	<li style="border-bottom: 1px solid #d7d7d7;text-align: left;" role="presentation" class="active"
-		><a href="#1" aria-controls="fet" role="tab" data-toggle="tab">B.Sc (Engineering)</a></li>
-		<li style="border-bottom: 1px solid #d7d7d7;text-align: left;" role="presentation"
-		><a href="#2" aria-controls="fet" role="tab" data-toggle="tab">M.Sc (Engineering)</a></li>
-		<li style="border-bottom: 1px solid #d7d7d7;text-align: left;" role="presentation"
-		><a href="#6" aria-controls="fet" role="tab" data-toggle="tab">M. Phil</a></li>
+<?php
+while ( $department_degree->have_posts() ) {
+	$department_degree->the_post();
+	$count ++;
+	if ( 1 == $count ) {
+		?>
+        <li style="border-bottom: 1px solid #d7d7d7;text-align: left;" role="presentation" class="active"><a href="#<?php echo $count; ?>" aria-controls="fet" role="tab" data-toggle="tab"><?php the_title() ?></a>
+        </li>
+		<?php
+	}
+	else {
+		?>
+        <li style="border-bottom: 1px solid #d7d7d7;text-align: left;" role="presentation"><a href="#<?php echo $count; ?>" aria-controls="fet" role="tab" data-toggle="tab"><?php the_title() ?></a></li>
+		<?php
+	}
+}
+wp_reset_query();
+    ?>
 	</ul>
 	</div>
+
+	<?php
+	$args_degree = array(
+		'post_type'   => 'degree',
+		'post_status' => 'publish',
+		'posts_per_page' => -1,
+	);
+	$department_degree = new WP_Query( $args_degree );
+	$count =0;
+	?>
 	<div class="col col-sm-8">
 		<div class="row tab-content">
-			<div role="tabpanel" class="tab-pane fade in active" id="1">
+<?php
+while ( $department_degree->have_posts() ) {
+	$department_degree->the_post();
+	$post_id = get_the_ID();
+	$count ++;
+	$deg_detail = get_post_meta($post_id,'_pust_degreefor_home_page', true);
+	if ( 1 == $count ) {
+		?>
+			<div role="tabpanel" class="tab-pane fade in active" id="<?php echo $count; ?>">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h3 style="color: red;font-size: 20px;">Departments under the Faculty of Engineering and Technology</h3>
+						<h3 style="color: red;font-size: 20px;">About <?php the_title(); ?></h3>
 					</div>
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-md-12 ">
 							<p class="row vc_msg_body" style="padding: 10px;">
-							The present era is the era of science and technology. To keep pace with the progressed world and to meet the global challenges, the government
-							is stepping forward with the promise of establishing Digital Bangladesh. As part of its vision of Digital Bangladesh and with a view to imparting
-							science and technology oriented knowledge, Pabna University of Science and Technology was established in 2008. Since its inception, the University
-							has made steady progress within a very short period of time. The University is growing rapidly in terms of activity, quality, research and reputation. It provides multidisciplinary education with five faculties namely Engineering and Technology, Science, Business Studies, Humanities and Social Science and Life and Earth Science. Now the University has 21 departments under five faculties. Through creating and disseminating knowledge, PUST is trying to promote excellence in higher education by producing skilled manpower and enlightened citizen based on science and technology. Each and every member of this University is working hard to ensure quality education and thereby to accomplish its mission – producing quality graduates to meet the national and global challenges.
-							As a Vice-Chancellor of this university, I dream of producing qualitative and research oriented manpower to solve the existing, long term and newly
-						arisen problems that the country faces every day.
+                                <?php echo $deg_detail; ?>
 					</p>
-					<button type="button" class="btn btn-primary">Detail</button>
+					<a href="<?php echo esc_url(get_permalink()); ?>" class="btn btn-primary">Detail</a>
 				</div>
 
 						</div>
 					</div>
 				</div>
 			</div>
+		<?php
+	}
+	else {
+		?>
 
-		<div role="tabpanel" class="tab-pane fade" id="2">
+		<div role="tabpanel" class="tab-pane fade" id="<?php echo $count; ?>">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 style="color: red;font-size: 20px;">Departments under the Faculty of Science</h3>
+					<h3 style="color: red;font-size: 20px;">About <?php the_title(); ?></h3>
 				</div>
 				<div class="panel-body">
 					<div class="row">
 
 		<div class="col-md-12 ">
 							<p class="row vc_msg_body" style="padding: 10px;">
-							The present era is the era of science and technology. To keep pace with the progressed world and to meet the global challenges, the government
-							is stepping forward with the promise of establishing Digital Bangladesh. As part of its vision of Digital Bangladesh and with a view to imparting
-							science and technology oriented knowledge, Pabna University of Science and Technology was established in 2008. Since its inception, the University
-							has made steady progress within a very short period of time. The University is growing rapidly in terms of activity, quality, research and reputation. It provides multidisciplinary education with five faculties namely Engineering and Technology, Science, Business Studies, Humanities and Social Science and Life and Earth Science. Now the University has 21 departments under five faculties. Through creating and disseminating knowledge, PUST is trying to promote excellence in higher education by producing skilled manpower and enlightened citizen based on science and technology. Each and every member of this University is working hard to ensure quality education and thereby to accomplish its mission – producing quality graduates to meet the national and global challenges.
-							As a Vice-Chancellor of this university, I dream of producing qualitative and research oriented manpower to solve the existing, long term and newly
-						arisen problems that the country faces every day.
-					</p>
-					<button type="button" class="btn btn-primary">Detail</button>
+                                <?php echo $deg_detail; ?>
+
+                            </p>
+					<a href="<?php echo esc_url(get_permalink()); ?>" class="btn btn-primary">Detail</a>
 				</div>
-
-
-
-
-
-
-
-
 	</div>
-	</div></div></div>
+	</div>
+            </div>
+        </div>
+		<?php
+	}
+}
+wp_reset_query();
+?>
 
 </div>
 </div>
@@ -367,7 +400,7 @@ $department_events = new WP_Query( $args );
                     <div class="col-md-1"></div>
                     <div class="col-md-3"> <?php
 	                if ( has_post_thumbnail() )
-	                        the_post_thumbnail();
+	                        the_post_thumbnail('depevent');
 		                ?>
                         </div>
                         <div class="col-md-8 news_body">
