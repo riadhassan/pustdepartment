@@ -13,6 +13,7 @@ require_once get_theme_file_path('/inc/metabox/research-meta.php');
 require_once get_theme_file_path('/inc/metabox/degree-meta.php');
 require_once get_theme_file_path('/inc/metabox/office-stuff-meta.php');
 require_once get_theme_file_path('/inc/metabox/stdsec-meta.php');
+require_once get_theme_file_path('/inc/metabox/gallery-meta.php');
 require_once get_theme_file_path('/inc/metabox/facultymetabox.php');
 require_once get_theme_file_path('/inc/metabox/downloadsmeta.php');
 require_once get_theme_file_path('/inc/metabox/notice-ventmeta.php');
