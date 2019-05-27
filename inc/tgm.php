@@ -65,6 +65,11 @@ function pustdepartment_register_required_plugins() {
 			'slug'      => 'CMB2',
 			'source'    => 'https://github.com/hasinhayder/CMB2/archive/master.zip',
 		),
+		array(
+			'name'      => 'cmb2-attached-posts',
+			'slug'      => 'cmb2-attached-posts',
+			'source'    => 'https://github.com/CMB2/cmb2-attached-posts/archive/master.zip',
+		),
 
 		// This is an example of how to include a plugin from the WordPress Plugin Repository.
 		array(
@@ -72,7 +77,11 @@ function pustdepartment_register_required_plugins() {
 			'slug'      => 'custom-post-type-ui',
 			'required'   => false,
 		),
-
+		array(
+					'name'      => 'edit-author-slug',
+					'slug'      => 'edit-author-slug',
+					'required'   => false,
+		),
 	);
 
 	/*
