@@ -28,6 +28,7 @@ get_header();
 													<th style="text-align: center;">Published Date</th>
 													<th style="text-align: center;">Title</th>
 													<th style="text-align: center;">Notice Download</th>
+													<th style="text-align: center;">View</th>
 												</tr>
 												</thead>
 												<tbody>
@@ -60,6 +61,9 @@ get_header();
 														}
 														?>
 													</td>
+                                                    <td style="text-align: center;">
+                                                        <a class="btn btn-success" href="<?php echo esc_url(get_permalink()); ?>">View</a>
+                                                    </td>
 												</tr>
 
 												<?php

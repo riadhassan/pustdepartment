@@ -57,7 +57,11 @@ get_header();
 															<?php
 														}
 														?>
+                                                    </td>
 
+                                                </tr>
+                                                <tr>
+                                                    <td>
 														<div class="col-md-12 p-5 form-wrap">
 															<div class="col-md-12 pl-md-5 mb-5">
 																<p>
