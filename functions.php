@@ -9,6 +9,10 @@
 
 require_once get_theme_file_path('/inc/tgm.php');
 require_once get_theme_file_path('/inc/metabox/homemeta.php');
+require_once get_theme_file_path('/inc/metabox/research-meta.php');
+require_once get_theme_file_path('/inc/metabox/degree-meta.php');
+require_once get_theme_file_path('/inc/metabox/office-stuff-meta.php');
+require_once get_theme_file_path('/inc/metabox/stdsec-meta.php');
 require_once get_theme_file_path('/inc/metabox/facultymetabox.php');
 require_once get_theme_file_path('/inc/metabox/downloadsmeta.php');
 require_once get_theme_file_path('/inc/metabox/notice-ventmeta.php');
@@ -128,6 +132,18 @@ if ( ! function_exists( "pustdepartment_pagination" ) ) {
 		echo wp_kses_post( $links );
 	}
 }
+
+function post_types_author_archives($query) {
+
+	// Add 'videos' post type to author archives
+	if ( $query->is_author )
+		$query->set( 'post_type', array('studentsection') );
+
+	// Remove the action after it's run
+	remove_action( 'pre_get_posts', 'post_types_author_archives' );
+}
+add_action( 'pre_get_posts', 'post_types_author_archives' );
+
 function pustdepartment_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Sidebar', 'pustdepartment' ),
